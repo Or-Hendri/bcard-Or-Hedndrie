@@ -2,6 +2,7 @@ import React from "react";
 import Container from "@mui/material/Container";
 import PageHeader from "./../components/PageHeader";
 import Grid from "@mui/material/Grid";
+import { Divider } from "@mui/material";
 
 const AboutPage = () => {
   return (
@@ -12,35 +13,70 @@ const AboutPage = () => {
       />
 
       <Grid container spacing={2}>
-        <Grid item xs={12} md={8} alignSelf="center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
-          repellendus nostrum. Dolorem voluptatem dolor ipsam, ab voluptates
-          laboriosam qui voluptate cum consectetur exercitationem, tempore
-          facere quod iste nemo modi rerum natus libero cupiditate quidem esse
-          soluta assumenda veritatis porro fuga? Officiis voluptatem ex odio
-          itaque. Delectus, quod qui eligendi cupiditate, asperiores ratione
-          iusto aspernatur veniam accusamus molestiae ipsum, dignissimos
-          voluptatem perferendis quibusdam! Accusamus consequatur tenetur
-          provident odio magni, debitis placeat commodi cupiditate? Eum officia
-          fuga corrupti aut adipisci totam? Voluptatum fugiat, perspiciatis
-          eveniet ad repellat molestiae eligendi aliquam ratione nostrum est
-          quia ab et, mollitia blanditiis reiciendis minus deserunt eos. Vitae,
-          reiciendis sunt autem, error illum, deleniti ratione quos doloremque
-          accusantium in ipsa rem placeat! Assumenda quibusdam tenetur
-          repellendus quod commodi! Ducimus eaque ratione non sint nulla rem
-          impedit voluptas tenetur labore, enim adipisci voluptate accusamus.
-          Eius, velit nesciunt tempore reprehenderit hic sint, adipisci iure
+        <Grid
+          item
+          xs={12}
+          md={5}
+          alignSelf="center"
+          fontSize={18}
+          lineHeight="1.5"
+        >
+          <span style={{ color: "green", fontSize: "26px" }}>
+            Details about the bcard Website
+          </span>{""}
+          <br />
+          Welcome to bcard website that you can find information about cards with
+          details for example: your number, email,and others.
+          The navbar at the website give you option to sign up and create a new account.
+          Its a simple steps to make a new account, at the left side of the navbar you have 
+          signup button and there you can fill up your details.The benefits from making a user
+          is the option to create and edit cards and also you have at the navbar
+          option to enter to your cards,if you don't have account you just have the Home page
+          like the photo on the right. 
+              
+        </Grid>
+        <Grid item md={7} xs={12}>
+          <img src="/assets/images/cardpage.png" alt="card" width="100%" />
         </Grid>
         <Grid
           item
-          xs={4}
-          sx={{
-            display: { md: "flex", xs: "none" },
-            justifyContent: "center",
-          }}>
-          <img src="/assets/images/card.jpg" alt="card" width="100%" />
+          xs={12}
+          md={5}
+          alignSelf="center"
+          fontSize={18}
+          lineHeight="1.5"
+        >
+          Business Member can add his cards to the website in 'My Cards' link,
+          when clicking the odd button you will transfer to add card page. If
+          you want to edit it later, just clicking the pencil icon on your card
+          and you will get all the details of the product in the initial table.
         </Grid>
+       
+        <Grid item md={12} xs={12}>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={5}
+          alignSelf="center"
+          fontSize={18}
+          lineHeight="1.5"
+        >
+          Admins Members can manage their users in the CRM system. If you are an
+          admin  the link'CRM' will appear in the head navbar.In the page CRM you 
+          can find a table of all the users in the website.You also can delete 
+          the users or change their status. 
+          
+        
+        </Grid>
+        <Grid item md={7} xs={12}>
+          <img src="/assets/images/crm.png" alt="card" width="120%" />
+        </Grid>
+        
       </Grid>
+
+        
+      
     </Container>
   );
 };

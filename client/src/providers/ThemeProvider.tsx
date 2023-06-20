@@ -8,8 +8,8 @@ import React, {
 } from "react";
 
 import {
-  createTheme,
   ThemeProvider as MuiThemeProvider,
+  createTheme,
 } from "@mui/material/styles";
 
 type ContextArgs = {
@@ -31,8 +31,9 @@ export const ThemeProvider: React.FC<Props> = ({ children }) => {
       mode: isDark ? "dark" : "light",
     },
   });
-  
-  const toggleDarkMode = useCallback(() => setDark(prev => !prev), []);
+  const toggleDarkMode = useCallback(() => {
+    setDark((prev) => !prev);
+  }, []);
 
   const value = useMemo(() => {
     return { isDark, toggleDarkMode };
@@ -40,6 +41,7 @@ export const ThemeProvider: React.FC<Props> = ({ children }) => {
 
   return (
     <MuiThemeProvider theme={theme}>
+      {" "}
       <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
     </MuiThemeProvider>
   );

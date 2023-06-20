@@ -1,13 +1,15 @@
-import useForm from "../../forms/hooks/useForm";
 import Container from "@mui/material/Container";
-import Form from "../../forms/components/Form";
-import Input from "../../forms/components/Input";
+import React from "react";
 import { Navigate } from "react-router-dom";
 import ROUTES from "../../routes/routesModel";
-import FormLink from "../../forms/components/FormLink";
-import initialLoginForm from "../helpers/initialForms/initialLoginForm";
-import loginSchema from "../models/Joi/loginSchema";
+import useForm from "../../forms/hooks/useForm";
+import Form from "../../forms/components/Form";
+import Input from "../../forms/components/Input";
+import INITIALLOGINFORM from "../helpers/initialForms/initialLogin";
+import loginSchema from "../models/joi-schema/loginSchema";
 import useHandleUser from "../hooks/useHandleUser";
+import FormLink from "../../forms/components/FormLink";
+import { useUser } from "../providers/UserProvider";
 
 const LoginPage = () => {
   const {
@@ -16,12 +18,14 @@ const LoginPage = () => {
   } = useHandleUser();
 
   const { value, ...rest } = useForm(
-    initialLoginForm,
+    INITIALLOGINFORM,
     loginSchema,
     handleLogin
   );
-  const { data, errors } = value;
   const { handleInputChange, handleReset, onSubmit, validateForm } = rest;
+  const { data, errors } = value;
+
+  
 
   if (user) return <Navigate replace to={ROUTES.ROOT} />;
 
@@ -32,31 +36,33 @@ const LoginPage = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-      }}>
+      }}
+    >
       <Form
-        title="Login"
         onSubmit={onSubmit}
         onReset={handleReset}
         onFormChange={validateForm}
-        spacing={1}
-        styles={{ maxWidth: "450px" }}>
+        title="login"
+        styles={{ maxWidth: "450px" }}
+      >
         <Input
+          data={data}
           label="email"
           name="email"
-          type="email"
-          data={data}
-          error={errors.email}
           onInputChange={handleInputChange}
+          error={errors.email}
+          required={true}
         />
         <Input
+          data={data}
           label="password"
           name="password"
-          type="password"
-          data={data}
-          error={errors.password}
+          type="password" 
           onInputChange={handleInputChange}
+          error={errors.password}
+          required={true}
+          
         />
-
         <FormLink text="Did not registered yet?" to={ROUTES.SIGNUP} />
       </Form>
     </Container>

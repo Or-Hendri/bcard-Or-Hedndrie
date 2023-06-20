@@ -5,7 +5,7 @@ export const getTime = () => {
   return `${time}.${millisecond}`;
 };
 
-export const colorLog = (text: string, color: string) => {
+export const colorLog = (text: string, color: string = "white") => {
   console.log(`%c${text}: ${getTime()}`, `color: ${color}; font-weight: bold`);
   return null;
 };

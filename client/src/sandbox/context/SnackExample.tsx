@@ -1,21 +1,23 @@
 import React, { useState } from "react";
+import { useSnack } from "../../providers/SnackbarProvider";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import SendIcon from "@mui/icons-material/Send";
-import { useSnack } from "../../providers/SnackbarProvider";
 
 const SnackExample = () => {
   const snack = useSnack();
   const [message, setMessage] = useState("");
-
-  const fireSnack = () => {
-    snack("warning", message);
+  const FireSnack = () => {
+    snack("success", message);
     setMessage("");
   };
-
   return (
+    // <div style={{position:"fixed", right:"50%", top:"50%"}}>
+    //    <input type="text" onChange={(e)=>setMessage(e.target.value)} value={message} />
+    //    <button onClick={FireSnack}>click</button>
+    // </div>
     <Paper
       component="form"
       sx={{
@@ -23,9 +25,10 @@ const SnackExample = () => {
         display: "flex",
         alignItems: "center",
         width: 350,
-      }}>
+      }}
+    >
       <InputBase
-        onChange={e => setMessage(e.target.value)}
+        onChange={(e) => setMessage(e.target.value)}
         sx={{ ml: 1, flex: 1 }}
         placeholder="Enter Snack Message"
         inputProps={{ "aria-label": "search google maps" }}
@@ -33,10 +36,11 @@ const SnackExample = () => {
       />
       <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
       <IconButton
-        onClick={fireSnack}
+        onClick={FireSnack}
         color="primary"
         sx={{ p: "10px" }}
-        aria-label="directions">
+        aria-label="directions"
+      >
         <SendIcon />
       </IconButton>
     </Paper>

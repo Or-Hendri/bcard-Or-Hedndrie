@@ -2,9 +2,10 @@ import MuiMenu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Box from "@mui/material/Box";
 import MenuLink from "./MenuLink";
+import useHandleUser from "../../../../users/hooks/useHandleUser";
 import { useUser } from "../../../../users/providers/UserProvider";
 import ROUTES from "../../../../routes/routesModel";
-import useHandleUsers from "../../../../users/hooks/useHandleUser";
+import { Routes, useParams } from "react-router-dom";
 
 type Props = {
   isOpen: boolean;
@@ -14,12 +15,14 @@ type Props = {
 
 const Menu: React.FC<Props> = ({ isOpen, anchorEl, onClose }) => {
   const { user } = useUser();
-  const { handleLogout } = useHandleUsers();
+  const { handleLogout } = useHandleUser();
 
   const onLogout = () => {
     handleLogout();
     onClose();
   };
+
+  const { cardId } = useParams();
 
   return (
     <MuiMenu
@@ -34,7 +37,8 @@ const Menu: React.FC<Props> = ({ isOpen, anchorEl, onClose }) => {
       transformOrigin={{
         vertical: "top",
         horizontal: "right",
-      }}>
+      }}
+    >
       <Box>
         <MenuLink
           label="about"
@@ -63,12 +67,12 @@ const Menu: React.FC<Props> = ({ isOpen, anchorEl, onClose }) => {
           <>
             <MenuLink
               label="profile"
-              navigateTo={ROUTES.ROOT}
+              navigateTo={`${ROUTES.PROFILE_USER_PAGE}/${user._id}`}
               onClick={onClose}
             />
             <MenuLink
               label="edit account"
-              navigateTo={ROUTES.ROOT}
+              navigateTo={`${ROUTES.EDIT_USER_PAGE}/${user._id}`}
               onClick={onClose}
             />
 

@@ -17,7 +17,6 @@ export const NavBar = () => {
           <Box sx={{ display: { xs: "inline-flex", md: "none" } }}>
             <SearchBar />
           </Box>
-
           <RightNavBar />
         </Toolbar>
       </AppBar>

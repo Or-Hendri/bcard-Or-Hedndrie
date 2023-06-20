@@ -7,7 +7,7 @@ import React, {
   useEffect,
 } from "react";
 import { TokenType } from "../models/types/userTypes";
-import { getToken, getUser } from "../services/localStorage";
+import { getToken, getUser } from "../services/LocalStorageService";
 
 type ContextArgs = {
   user: null | TokenType;
@@ -30,8 +30,8 @@ export const UserProvider: React.FC<Props> = ({ children }) => {
     if (!user) {
       const userFromLocalStorage = getUser();
       setUser(userFromLocalStorage);
-      // const tokenFromLocalStorage = getToken();
-      // setToken(tokenFromLocalStorage);
+      //   const tokenFromLocalStorage = getToken();
+      //   setToken(tokenFromLocalStorage);
     }
   }, [user]);
 

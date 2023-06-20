@@ -1,2 +1,2 @@
-# bcard-W081222MR
+# b-card-or
  React TS Node express mongoDB app

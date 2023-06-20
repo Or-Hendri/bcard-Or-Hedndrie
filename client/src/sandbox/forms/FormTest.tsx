@@ -1,14 +1,14 @@
-import React from "react";
-import useForm from "../../forms/hooks/useForm";
-import Joi from "joi";
 import Container from "@mui/material/Container";
+import Joi from "joi";
+import React from "react";
 import Form from "../../forms/components/Form";
 import Input from "../../forms/components/Input";
-import ROUTES from "../../routes/routesModel";
+import useForm from "../../forms/hooks/useForm";
+import ROUTES, { SANDBOX_ROUTES } from "../../routes/routesModel";
 
 type Data = {
-  first: string;
-  last: string;
+  first: "";
+  last: "";
 };
 
 const FormTest = () => {
@@ -38,13 +38,16 @@ const FormTest = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-      }}>
+      }}
+    >
       <Form
-        title="Form Test"
+        title="form test"
         onSubmit={onSubmit}
         onReset={handleReset}
         onFormChange={validateForm}
-        to={ROUTES.SANDBOX}>
+        to={ROUTES.SANDBOX}
+        // styles={{ backgroundColor: "blue", border: "10px solid black" }}
+      >
         <Input
           label="fiRst NaMe"
           name="first"
@@ -54,7 +57,7 @@ const FormTest = () => {
           breakPoints={{ xs: 12, md: 6 }}
         />
         <Input
-          label="last name"
+          label="last NaMe"
           name="last"
           data={data}
           error={errors.last}
