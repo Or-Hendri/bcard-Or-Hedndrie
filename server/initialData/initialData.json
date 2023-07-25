@@ -1,48 +1,114 @@
 {
-  "users": [
+  "cards": [
     {
-      "name": { "first": "admin", "last": "user" },
-      "isBusiness": true,
-      "isAdmin": true,
-      "phone": "054-5287067",
-      "email": "admin@gmail.com",
-      "password": "Aa1234",
-      "address": {
-        "country": "israel",
-        "city": "tel-aviv",
-        "street": "magnive",
-        "houseNumber": "5"
+      "title": "first",
+      "subtitle": "first card subtitle",
+      "description": "first card description",
+      "phone": "058-4349871",
+      "email": "firstcard@gmail.com",
+      "web": "",
+      "image": {
+        "url": "",
+        "alt": ""
       },
-      "image": { "url": "", "alt": "" }
+      "address": {
+        "state": "",
+        "country": "israel",
+        "city": "lod",
+        "street": "marzuk",
+        "houseNumber": "4",
+        "zip": ""
+      }
     },
     {
-      "name": { "first": "regular", "last": "user" },
-      "isBusiness": false,
-      "phone": "050-4445488",
-      "email": "regular@gmail.com",
-      "password": "Aa1234!",
-      "address": {
-        "country": "israel",
-        "city": "tel-aviv",
-        "street": "magnive",
-        "houseNumber": "5"
+      "title": "second",
+      "subtitle": "second card subtitle",
+      "description": "second card description",
+      "phone": "058-4349871",
+      "email": "second@gmail.com",
+      "web": "",
+      "image": {
+        "url": "",
+        "alt": ""
       },
-      "image": { "url": "", "alt": "" }
+      "address": {
+        "state": "",
+        "country": "israel",
+        "city": "lod",
+        "street": "marzuk",
+        "houseNumber": "4",
+        "zip": ""
+      }
     },
     {
-      "name": { "first": "business", "last": "user" },
-      "isBusiness": true,
-      "phone": "050-5210765",
-      "email": "business@gmail.com",
-      "password": "Aa1234!",
-      "address": {
-        "country": "israel",
-        "city": "tel-aviv",
-        "street": "magnive",
-        "houseNumber": "5"
+      "title": "third",
+      "subtitle": "third card subtitle",
+      "description": "first card description",
+      "phone": "058-4349871",
+      "email": "third@gmail.com",
+      "web": "",
+      "image": {
+        "url": "",
+        "alt": ""
       },
-      "image": { "url": "", "alt": "" }
+      "address": {
+        "state": "",
+        "country": "israel",
+        "city": "lod",
+        "street": "marzuk",
+        "houseNumber": "4",
+        "zip": ""
+      }
     }
   ],
-  "cards": []
+  "users": [
+    {
+      "name": { "first": "business", "last": "user" },
+      "password": "Aa1234!",
+      "phone": "052-4425696",
+      "email": "business@gmail.com",
+      "image": {},
+      "address": {
+        "state": "",
+        "country": "israel",
+        "city": "lod",
+        "street": "marzuk",
+        "houseNumber": "5",
+        "zip": "34"
+      },
+      "isBusiness": true
+    },
+    {
+      "name": { "first": "reguar", "last": "user" },
+      "password": "Aa1234!",
+      "phone": "052-4425696",
+      "email": "regular@gmail.com",
+      "image": {},
+      "address": {
+        "state": "",
+        "country": "israel",
+        "city": "lod",
+        "street": "marzuk",
+        "houseNumber": "5",
+        "zip": "34"
+      }
+    },
+    {
+      "name": { "first": "admin", "last": "user" },
+      "password": "Aa1234!",
+      "phone": "052-4425696",
+      "email": "admin@gmail.com",
+      "image": {},
+      "address": {
+        "state": "",
+        "country": "israel",
+        "city": "lod",
+        "street": "marzuk",
+        "houseNumber": "5",
+        "zip": "34"
+      },
+      "isBusiness": true,
+      "isAdmin": true
+    }
+  ]
 }
