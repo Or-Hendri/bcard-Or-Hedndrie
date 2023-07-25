@@ -57,11 +57,9 @@ const LoginPage = () => {
           data={data}
           label="password"
           name="password"
-          type="password" 
           onInputChange={handleInputChange}
           error={errors.password}
           required={true}
-          
         />
         <FormLink text="Did not registered yet?" to={ROUTES.SIGNUP} />
       </Form>

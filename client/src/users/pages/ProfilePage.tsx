@@ -27,6 +27,7 @@ const ProfilePage = () => {
       <Container>
         <Typography
           variant="h3"
+          color="darkgoldenrod"
           fontFamily={"fantasy"}
           textAlign={"center"}
           paddingTop={5}

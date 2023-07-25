@@ -1,6 +1,10 @@
-import { FullUserType, UserMapToModelType } from "../../models/types/userTypes";
+import {
+  EditedUserMapToModelType,
+  FullUserType,
+  UserMapToModelType,
+} from "../../models/types/userTypes";
 
-const mapUserToModel = (user: FullUserType): UserMapToModelType => {
+const mapEditedUserToModel = (user: FullUserType): EditedUserMapToModelType => {
   return {
     _id: user._id,
     first: user.name.first,
@@ -8,7 +12,6 @@ const mapUserToModel = (user: FullUserType): UserMapToModelType => {
     last: user.name.last,
     phone: user.phone,
     email: user.email,
-    password: user.password,
     url: user.image.url!,
     alt: user.image.alt!,
     state: user.address.state!,
@@ -23,4 +26,4 @@ const mapUserToModel = (user: FullUserType): UserMapToModelType => {
   };
 };
 
-export default mapUserToModel;
+export default mapEditedUserToModel;

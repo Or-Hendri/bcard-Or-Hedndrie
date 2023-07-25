@@ -31,7 +31,7 @@ const Crm = () => {
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-      backgroundColor: "orange",
+      backgroundColor: "red",
       color: theme.palette.common.white,
     },
     [`&.${tableCellClasses.body}`]: {
@@ -62,7 +62,6 @@ const Crm = () => {
   const ChangeStatus = async (someUserId: string) => {
     setStatus((prev) => !prev);
     await handleChangeUserStatus(someUserId);
-    console.log(someUserId);
     await handleGetAllUsersInfo();
   };
 
@@ -85,6 +84,7 @@ const Crm = () => {
       >
         <Typography
           variant="h4"
+          color="darkgoldenrod"
           fontFamily={"fantasy"}
           textAlign={"center"}
           mt={4}
