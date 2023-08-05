@@ -9,7 +9,7 @@
     "dev": "set NODE_ENV=development&& nodemon ."
   },
   "keywords": [],
-  "author": "Yair buchnik",
+  "author": "Or Hendrie",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.22"
